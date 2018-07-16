@@ -13,7 +13,7 @@
     /root/tf-faster-rcnn/data
     ```
     
- 1. Create a folder and a soft link to use the pre-trained model
+1. Create a folder and a soft link to use the pre-trained model
   ```Shell
   NET=res101
   TRAIN_IMDB=voc_2007_trainval+voc_2012_trainval
@@ -22,8 +22,7 @@
   ln -s ../../../data/voc_2007_trainval ./default
   cd ../../..
   ```
-
- 2. Download pre-trained models and weights. 
+2. Download pre-trained models and weights. 
 
    For Resnet101, you can set up like:
    ```Shell
@@ -35,7 +34,7 @@
    cd ../..
    ```
 
- 3. Train (and test, evaluation)
+3. Train (and test, evaluation)
   ```Shell
   ./experiments/scripts/train_faster_rcnn.sh [GPU_ID] [DATASET] [NET]
   # GPU_ID is the GPU you want to test on
@@ -47,13 +46,13 @@
   ```
   **Note**: Please double check you have deleted soft link to the pre-trained models before training. If you find NaNs during training, please refer to [Issue 86](https://github.com/endernewton/tf-faster-rcnn/issues/86). Also if you want to have multi-gpu support, check out [Issue 121](https://github.com/endernewton/tf-faster-rcnn/issues/121).
 
- 4. Visualization with Tensorboard
+4. Visualization with Tensorboard
   ```Shell
   tensorboard --logdir=tensorboard/vgg16/voc_2007_trainval/ --port=7001 &
   tensorboard --logdir=tensorboard/vgg16/coco_2014_train+coco_2014_valminusminival/ --port=7002 &
   ```
 
- 5. Test and evaluate
+5. Test and evaluate
   ```Shell
   ./experiments/scripts/test_faster_rcnn.sh [GPU_ID] [DATASET] [NET]
   # GPU_ID is the GPU you want to test on
@@ -64,7 +63,7 @@
   ./experiments/scripts/test_faster_rcnn.sh 1 coco res101
   ```
 
- 6. You can use ``tools/reval.sh`` for re-evaluation
+6. You can use ``tools/reval.sh`` for re-evaluation
 
 
 By default, trained networks are saved under:
