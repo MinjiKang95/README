@@ -12,6 +12,16 @@
     ```
     /root/tf-faster-rcnn/data
     ```
+    
+ * Create a folder and a soft link to use the pre-trained model
+  ```Shell
+  NET=res101
+  TRAIN_IMDB=voc_2007_trainval+voc_2012_trainval
+  mkdir -p output/${NET}/${TRAIN_IMDB}
+  cd output/${NET}/${TRAIN_IMDB}
+  ln -s ../../../data/voc_2007_trainval ./default
+  cd ../../..
+  ```
 
 1. Download pre-trained models and weights. 
 
