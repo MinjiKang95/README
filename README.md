@@ -50,7 +50,7 @@
   # NET in {vgg16, res50, res101, res152} is the network arch to use
   # DATASET {pascal_voc, pascal_voc_0712, coco} is defined in test_faster_rcnn.sh
   # Examples:
-  ./experiments/scripts/test_faster_rcnn.sh 0 pascal_voc vgg16
+  ./experiments/scripts/test_faster_rcnn.sh 0 pascal_voc res101
   ./experiments/scripts/test_faster_rcnn.sh 1 coco res101
   ```
 
