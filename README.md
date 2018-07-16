@@ -1,14 +1,13 @@
 # README
 ### Train your own model
-1. Download pre-trained models and weights. The current code support VGG16 and Resnet V1 models. Pre-trained models are provided by slim, you can get the pre-trained models [here](https://github.com/tensorflow/models/tree/master/research/slim#pre-trained-models) and set them in the ``data/imagenet_weights`` folder. For example for VGG16 model, you can set up like:
-   ```Shell
-   mkdir -p data/imagenet_weights
-   cd data/imagenet_weights
-   wget -v http://download.tensorflow.org/models/vgg_16_2016_08_28.tar.gz
-   tar -xzvf vgg_16_2016_08_28.tar.gz
-   mv vgg_16.ckpt vgg16.ckpt
-   cd ../..
-   ```
+
+-[] 컨테이너 생성/실행
+   사용된 이미지 musing_darwin_backup
+   '''nvidia-docker run -i -t --name [컨테이너 이름] musing_darwin_backup /bin/bash
+   '''
+
+1. Download pre-trained models and weights. 
+
    For Resnet101, you can set up like:
    ```Shell
    mkdir -p data/imagenet_weights
@@ -26,8 +25,7 @@
   # NET in {vgg16, res50, res101, res152} is the network arch to use
   # DATASET {pascal_voc, pascal_voc_0712, coco} is defined in train_faster_rcnn.sh
   # Examples:
-  ./experiments/scripts/train_faster_rcnn.sh 0 pascal_voc vgg16
-  ./experiments/scripts/train_faster_rcnn.sh 1 coco res101
+  ./experiments/scripts/train_faster_rcnn.sh 1 pascal_voc res101
   ```
   **Note**: Please double check you have deleted soft link to the pre-trained models before training. If you find NaNs during training, please refer to [Issue 86](https://github.com/endernewton/tf-faster-rcnn/issues/86). Also if you want to have multi-gpu support, check out [Issue 121](https://github.com/endernewton/tf-faster-rcnn/issues/121).
 
