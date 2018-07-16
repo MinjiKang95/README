@@ -1,10 +1,11 @@
 # README
 ### Train your own model
 
--[] 컨테이너 생성/실행
+* 컨테이너 생성/실행
    사용된 이미지 musing_darwin_backup
-   '''nvidia-docker run -i -t --name [컨테이너 이름] musing_darwin_backup /bin/bash
-   '''
+   ```
+   nvidia-docker run -i -t --name [컨테이너 이름] musing_darwin_backup /bin/bash
+   ```
 
 1. Download pre-trained models and weights. 
 
